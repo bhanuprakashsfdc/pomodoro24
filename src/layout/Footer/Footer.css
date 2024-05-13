@@ -1,0 +1,32 @@
+.footer{
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  position: relative;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.footer ul li{
+  list-style: none;
+  display: inline-block;
+  margin-left: 20px;
+  color: var(--text-color);
+}
+.footer p {
+  color: var(--text-color);
+}
+/* -- Media Queries -- */
+@media (max-width: 840px) {
+  .footer{
+      display: block;
+      text-align: center;
+  }
+  .footer ul li{
+      margin: 10px;
+  }
+  .footer ul{
+      margin-top: 10px;
+  }
+}
