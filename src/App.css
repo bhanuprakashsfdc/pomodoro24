@@ -83,6 +83,7 @@ a:hover {
 .footer {
     position: relative; /* Adjust positioning as needed */
     z-index: 2; /* Lower than Navbar but enough to be above other content */
+    top: 700px;
   }
   
 

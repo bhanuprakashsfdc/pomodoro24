@@ -8,6 +8,7 @@ function App() {
     <>
       <div className='app-container'>
         <Navbar />
+        <Pomodoro />
         <Footer />
       </div>
     </>
