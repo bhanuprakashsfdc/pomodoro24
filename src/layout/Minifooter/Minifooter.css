@@ -54,7 +54,9 @@
 input[type="email"] {
     padding: 10px;
     border: none;
-    width: 200px;
+    width: 40vh;
+    font-size: 16px;
+    color: black;
 }
 
 .footer-bottom {
