@@ -2,10 +2,15 @@ import React, {useEffect, useState} from 'react'
 /* import { Link } from 'react-router-dom'; */
 import './Navbar.css'
 import { colors } from '../../constants/constants';
-
+/* Pages */
+import Home from '../../pages/Home'
+import About from '../../pages/About'
+import Contact from '../../pages/Contact'
+import Pomodoro from '../../pages/Pomodoro';
+/* Images */
 import logo from '../../assets/images/logo.png';
-import menu_icon from '../../assets/icons/menu-icon.png';
-
+import menuIcon from '../../assets/icons/menu-icon.png';
+import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const navbar = () => {
   /* Onclick on menu navigate to section */
@@ -17,24 +22,35 @@ const navbar = () => {
   },[]);
   /* Display humbergericon on click hide menu bar */
   const [mobileMenu, setMobileMenu] = useState(false);
-  const toogleMenu = ()=>{
-    mobileMenu? setMobileMenu(false):setMobileMenu(true);
-  }
+  const toggleMenu = () => {
+    setMobileMenu(!mobileMenu);
+};
 
   return (
+    <Router>
     <nav className={`container ${sticky? 'dark-nav':''}`}>
-      <img src={logo} alt="" className='logo'/>
-      <ul className={mobileMenu?'':'hide-mobile-menu'}>
-      <li>Home</li>
-        <li> Services</li>
-        <li> About Us</li>
-        <li> Gallery</li>
-        <li> Testimonials</li>
-        <li> <button> Contact Us</button></li>
-      </ul>
-      <img src={menu_icon} alt="" className='menu_icon nav_contact_box' onClick={toogleMenu}/>
+        <img src={logo} alt="logo" className="logo" />
+        <ul className={mobileMenu?'':'hide-mobile-menu'}>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/pomodoro">Pomodoro</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li> Services</li>
+            <li> About Us</li>
+            <li> Gallery</li>
+            <li> Testimonials</li>
+        </ul>
+        <img src={menuIcon} alt="Menu Icon" className="menu_icon nav_contact_box" onClick={toggleMenu} />
     </nav>
-  )
+
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pomodoro" element={<Pomodoro />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+    </Routes>
+</Router>
+);
 }
 
 export default navbar
