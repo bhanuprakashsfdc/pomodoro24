@@ -5,7 +5,8 @@ function Pomodoro(){
     const [isActive, setIsActive] = useState(false);
     const [timerType, setTimerType] = useState('focus');
     const bodyRef = useRef(null); // Create a ref for the body element
-    
+    const timerTickSound = useRef(new Audio('src/assets/audio/timer.wav')); // Assuming a different sound for ticking
+    const alarmSound = useRef(new Audio('src/assets/audio/alarm.wav'));
     useEffect(() => {
         if (bodyRef.current) {
             bodyRef.current.style.backgroundColor = getBackgroundColor(timerType);
@@ -13,19 +14,21 @@ function Pomodoro(){
       }, [timerType]);
     
     useEffect(() => {
-        // Sound effects
         let interval = null;
     
         if (isActive && timeLeft > 0) {
           interval = setInterval(() => {
+            timerTickSound.current.play();
             setTimeLeft(timeLeft => timeLeft - 1);
           }, 1000);
         } else if (timeLeft === 0) {
+          alarmSound.current.play();
           setIsActive(false);
         }
     
         return () => {
             clearInterval(interval);
+            timerTickSound.current.pause();  // Pause the ticking sound when the timer is not active
           };
         }, [isActive, timeLeft]);
     
