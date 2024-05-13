@@ -1,0 +1,113 @@
+/* src/index.css */
+
+:root {
+    --primary-color: #5C45FD;
+    --secondary-color: #A89BFF;
+    --background-color: #161616;
+    --text-color: #F5F5F5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.body-content {
+    flex: 1;  
+}
+
+/* A tags */
+a{
+    text-decoration: none;
+    color: inherit;
+    line-height: 1;
+    cursor: pointer;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* Container */
+.container{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+/* Button */
+.btn , button{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 14px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn img {
+   width: 20px; 
+   margin-left: 10px;
+}
+.btn.dark-btn{
+    background-color: #212EA0;
+    color: white;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 50px; /* Assuming Navbar is fixed and 50px in height */
+    padding-bottom: 50px; /* Assuming Footer is 50px in height */
+  }
+
+.navbar {
+    position: relative; /* or absolute, fixed, depending on your layout */
+    z-index: 10; /* Higher z-index means it will be on top */
+  }
+  
+.footer {
+    position: relative; /* Adjust positioning as needed */
+    z-index: 2; /* Lower than Navbar but enough to be above other content */
+  }
+  
+
+/* -- Media Queries -- */
+@media (max-width:1200px) {
+    .container{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .btn{
+        padding: 14px 22px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width : 840px){
+    *{
+       font-size: 14px;
+    }
+    .container{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .btn{
+        padding: 14px 22px;
+        font-size: 12px;
+    }
+}
