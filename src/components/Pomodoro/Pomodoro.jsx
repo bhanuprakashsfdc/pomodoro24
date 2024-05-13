@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Pomodoro/Pomodoro.css';
-import timeticker from '../../../public/assets/audio/alarm.wav'
 function Pomodoro(){
     const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes
     const [isActive, setIsActive] = useState(false);
@@ -15,25 +14,20 @@ function Pomodoro(){
     
     useEffect(() => {
         // Sound effects
-        const timerTickSound = new Audio('../../assets/audio/timer.wav');
-        const alarmSound = new Audio('../../assets/audio/alarm.wav');
         let interval = null;
     
         if (isActive && timeLeft > 0) {
           interval = setInterval(() => {
-            timerTickSound.play();
             setTimeLeft(timeLeft => timeLeft - 1);
           }, 1000);
         } else if (timeLeft === 0) {
-          alarmSound.play();
           setIsActive(false);
         }
     
         return () => {
             clearInterval(interval);
-            timerTickSound.pause();  // Pause the ticking sound when the timer is not active
           };
-        }, [isActive, timeLeft, timerTickSound, alarmSound]);
+        }, [isActive, timeLeft]);
     
      
         function resetTimer(type) {
