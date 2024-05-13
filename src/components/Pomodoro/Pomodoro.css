@@ -5,6 +5,7 @@
 
 .pomo-body{
    background: var(--primary-color); 
+   min-height: 70vh;
 }
 
 .pomo-container{
@@ -87,6 +88,10 @@
 
 @media (max-width:840px) { 
     .pomo-container {
-        top: 300px;
+        top: 25vh;
     }
+    .pomo-body{
+      min-height: 25vh;
+      background-color: var(--background-color);
+   }
 }

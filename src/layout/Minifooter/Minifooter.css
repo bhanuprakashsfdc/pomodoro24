@@ -1,8 +1,10 @@
 .minifooter {
-    background: var(--primary-color);
-    padding: 20px 0;
+    background: var(--background-color);
+    padding: 100px;
     padding-left: 10%;
     padding-right: 10%;
+    font-size: 25px;
+    min-height: 40vh;
 }
 
 .footer-content {
@@ -62,6 +64,9 @@ input[type="email"] {
 
 /* Media Queries for Tablets and Desktops */
 @media (min-width: 768px) {
+    .minifooter {
+        padding: 70px;  
+    }
     .footer-content {
         flex-direction: row;
     }
