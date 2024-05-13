@@ -1,0 +1,95 @@
+.minifooter {
+    background: var(--primary-color);
+    padding: 20px 0;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 20px 0;
+}
+
+.about, .subscribe {
+    flex: 1 1 200px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section {
+    margin-right: 20px;
+}
+
+.section h3, .about h2 {
+    color: #bbb;
+}
+
+.section ul, .about p {
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+}
+
+.section a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    border: none;
+    width: 200px;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Media Queries for Tablets and Desktops */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+    }
+
+    .about, .subscribe {
+        flex: 1 1 20%; /* Adjusts width for larger screens */
+    }
+
+    .links {
+        display: flex;
+        overflow-x: auto; /* Enables horizontal scrolling */
+        white-space: nowrap; /* Prevents items from wrapping to the next line */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+        scrollbar-width: none; /* Hides scrollbar on Firefox */
+        -ms-overflow-style: none; /* Hides scrollbar on IE and Edge */
+    }
+
+    .section {
+        margin-right: 20px;
+        margin-bottom: 0; /* Removes the bottom margin on larger screens */
+    }
+
+    input[type="email"], button {
+        width: auto; /* Auto width for inline display */
+    }
+
+    button {
+        padding: 10px 20px;
+        width: initial; /* Reset to default styling */
+    }
+}
