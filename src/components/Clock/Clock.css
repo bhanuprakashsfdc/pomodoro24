@@ -1,0 +1,49 @@
+/* Live clock */
+.clock-ui{
+    background-color: var(--background-color);
+    min-height: 70vh;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.clock-display{
+  
+}
+
+.clock{
+    position: relative;
+    top: 25vh;
+    text-align: center;
+    color: #ffffff;
+    font-size: 12em;
+    font-weight: 700;    
+}
+
+/* -- Media Queries -- */
+@media (max-width:1200px) { 
+    .clock-ui{
+        min-height: 35vh;
+    }
+    .clock{
+        position: relative;
+        top: 15vh;
+        text-align: center;
+        color: #ffffff;
+        font-size: 5em;
+        font-weight: 700;    
+    }
+}
+
+@media (max-width:840px) { 
+    .clock-ui{
+        min-height: 35vh;
+    }
+    .clock{
+        position: relative;
+        top: 15vh;
+        text-align: center;
+        color: #ffffff;
+        font-size: 5em;
+        font-weight: 700;    
+    }
+}

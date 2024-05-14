@@ -1,5 +1,5 @@
 // src/constants.js
-export const WEBSITE_NAME = "Pomodoro24.com";
+export const WEBSITE_NAME = "Pomodoro36.com";
 export const TAG_LINE = "We will help you to track your time";
 
 export const colors = {
