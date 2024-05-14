@@ -1,7 +1,7 @@
 function Contact() {
   return (
-    <div>
-      <p> Contact Page</p>
+    <div className='pomo-body body-content'>
+      <p> Reach out us</p>
     </div>
   );
 }

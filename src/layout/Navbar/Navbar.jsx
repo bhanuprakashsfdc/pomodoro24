@@ -7,6 +7,8 @@ import Home from '../../pages/Home'
 import About from '../../pages/About'
 import Contact from '../../pages/Contact'
 import Pomodoro from '../../pages/Pomodoro';
+import Clock from '../../pages/Clock';
+import Calender from '../../pages/Calender';
 /* Images */
 import logo from '../../assets/images/logo.png';
 import menuIcon from '../../assets/icons/menu-icon.png';
@@ -33,12 +35,10 @@ const navbar = () => {
         <ul className={mobileMenu?'':'hide-mobile-menu'}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/pomodoro">Pomodoro</Link></li>
+            <li><Link to="/clock">Clock</Link></li>
+            <li><Link to="/calender">Calender</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <li> Services</li>
-            <li> About Us</li>
-            <li> Gallery</li>
-            <li> Testimonials</li>
         </ul>
         <img src={menuIcon} alt="Menu Icon" className="menu_icon nav_contact_box" onClick={toggleMenu} />
     </nav>
@@ -46,6 +46,8 @@ const navbar = () => {
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pomodoro" element={<Pomodoro />} />
+        <Route path="/clock" element={<Clock />} />
+        <Route path="/calender" element={<Calender />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
     </Routes>
