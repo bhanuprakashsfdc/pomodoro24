@@ -9,6 +9,7 @@ import Contact from '../../pages/Contact'
 import Pomodoro from '../../pages/Pomodoro';
 import Clock from '../../pages/Clock';
 import Calender from '../../pages/Calender';
+import Ipaddress from '../../pages/Ipaddress';
 /* Images */
 import logo from '../../assets/images/logo.png';
 import menuIcon from '../../assets/icons/menu-icon.png';
@@ -37,6 +38,7 @@ const navbar = () => {
             <li><Link to="/pomodoro">Pomodoro</Link></li>
             <li><Link to="/clock">Clock</Link></li>
             <li><Link to="/calender">Calender</Link></li>
+            <li><Link to="/what-is-my-ipaddress">Ip Address</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
         </ul>
@@ -48,6 +50,7 @@ const navbar = () => {
         <Route path="/pomodoro" element={<Pomodoro />} />
         <Route path="/clock" element={<Clock />} />
         <Route path="/calender" element={<Calender />} />
+        <Route path="/what-is-my-ipaddress" element={<Ipaddress />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
     </Routes>
