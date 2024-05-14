@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Pomodoro/Pomodoro.css';
+import { WEBSITE_NAME } from '../../constants/constants';
 function Pomodoro(){
     const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes
     const [isActive, setIsActive] = useState(false);
@@ -70,7 +71,12 @@ function Pomodoro(){
         return '#BB4949';  // Default Red
     }
   }
+  /* To display info in Title Tag */
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  const timerdisplay = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
+  document.title = "Time is " + timerdisplay   +" - "+ WEBSITE_NAME;
     
   return (
     <div className="pomo-body body-content">
